@@ -1,0 +1,7 @@
+SELECT Enterprise_Account__r.Name, EOY_Email_Blast_Sent_2021__c, Email__c
+FROM Patient__c
+WHERE Enterprise_Account__c = '0014000001e2QsjAAE'
+AND Email__c != NULL
+AND Eligibility_Status__c = 'Active'
+AND RecordType.Name = 'Enterprise'
+AND IsDeleted = FALSE

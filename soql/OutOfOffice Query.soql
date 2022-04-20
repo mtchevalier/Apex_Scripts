@@ -1,0 +1,19 @@
+SELECT  UserId,
+        Message,
+        StartDate,
+        EndDate,
+        User.Name,
+        User.FirstName,
+        User.Email,
+        User.User_Back_Up_1__c,
+        User.User_Back_Up_2__c,
+        User.PCA_Backup_1__c,
+        User.PCA_Backup_2__c,
+        User.PCA_Backup_3__c,
+        User.PCA_Backup_1__r.Email,
+        User.PCA_Backup_2__r.Email,
+        User.PCA_Backup_3__r.Email
+FROM OutOfOffice
+WHERE IsEnabled = TRUE 
+AND StartDate <= TODAY 
+AND EndDate >= TODAY

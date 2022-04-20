@@ -1,0 +1,10 @@
+SELECT Name, Description
+FROM Profile
+WHERE NOT (
+            Name LIKE '%API%'
+            OR 
+            Name LIKE '%Integration%'
+            OR 
+            Name LIKE '%Chatter%'
+)
+ORDER BY Name

@@ -1,0 +1,16 @@
+SELECT Label, Description
+FROM PermissionSet
+WHERE NOT (
+        Name LIKE '%Client%'
+        OR
+        Name LIKE '%00000%'
+        OR
+        Name LIKE '%Pardot%'
+        OR
+        Name LIKE '%Docusign%'
+        OR
+        Name = 'TEST'
+        OR
+        Label LIKE 'sfdc.activityplatform'
+)
+ORDER BY Label

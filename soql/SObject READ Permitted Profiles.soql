@@ -1,0 +1,12 @@
+//TODO
+//      improve upon this by building script that also checks permission sets
+
+SELECT Profile.Name
+FROM PermissionSet
+WHERE IsOwnedByProfile = true AND Id IN (
+        SELECT ParentId
+        FROM ObjectPermissions
+        WHERE PermissionsRead = true
+        AND SObjectType = 'Account'
+)
+ORDER BY Profile.Name ASC
